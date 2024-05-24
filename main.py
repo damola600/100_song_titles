@@ -2,10 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import os
+from dotenv import load_dotenv, dotenv_values
 
+load_dotenv()
 
-SPOTIFY_CLIENT_ID = "d449cdc5c95a4ff581df82b343c23990"
-SPOTIFY_CLIENT_SECRET = "d912442ae3284631855dbbede15f9f99"
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 URL = "https://www.billboard.com/charts/hot-100"
 REDIRECT_URI = "http://example.com"
 SPOTIFY_ENDPOINT = "https://api.spotify.com/v1/users/31r4evqfnx6oaxufvxwc2z33q3uu"
